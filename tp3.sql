@@ -26,24 +26,24 @@ WHERE (A.PRIX < 2 OR A.PRIX > 6.25)
 ORDER BY A.PRIX DESC;
 
 -- f. En utilisant un opérateur logique, listez tous les articles dont les fournisseurs sont la
--- Française d'imports ou Dubois et Fils
+-- Française d'imports ou Dubois & Fils
 SELECT A.*
 FROM ARTICLE A
 JOIN FOURNISSEUR F ON A.ID_FOU = F.ID
-WHERE F.NOM = 'Française d\'Imports' OR F.NOM = 'Dubois et Fils';
+WHERE F.NOM = 'Française d\'Imports' OR F.NOM = 'Dubois & Fils';
 
 -- g. En utilisant l'opérateur IN, réalisez la même requête que précédemment
 SELECT A.*
 FROM ARTICLE A
 JOIN FOURNISSEUR F ON A.ID_FOU = F.ID
-WHERE F.NOM IN ('Française d\'Imports', 'Dubois et Fils');
+WHERE F.NOM IN ('Française d\'Imports', 'Dubois & Fils');
 
 -- h. En utilisant les opérateurs NOT et IN, listez tous les articles dont les fournisseurs ne
--- sont ni Française d'Imports, ni Dubois et Fils.
+-- sont ni Française d'Imports, ni Dubois & Fils.
 SELECT A.*
 FROM ARTICLE A
 JOIN FOURNISSEUR F ON A.ID_FOU = F.ID
-WHERE F.NOM NOT IN ('Française d\'Imports', 'Dubois et Fils');
+WHERE F.NOM NOT IN ('Française d\'Imports', 'Dubois & Fils');
 
 -- i. Listez tous les bons de commande dont la date de commande est entre le
 -- 01/02/2019 et le 30/04/2019.
